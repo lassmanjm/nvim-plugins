@@ -1,6 +1,3 @@
-M ={}
-
-M.setup = function(opts)
 	return {
 		{
 			"romgrk/barbar.nvim",
@@ -65,6 +62,3 @@ M.setup = function(opts)
 			end,
 		},
 	}
-end
-
-return M

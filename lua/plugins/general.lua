@@ -98,5 +98,7 @@ return {
 	  { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 	},
       },
+      "tpope/vim-commentary" ,
+      "lewis6991/gitsigns.nvim",
 }
 

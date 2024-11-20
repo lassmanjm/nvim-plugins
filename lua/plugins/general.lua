@@ -1,4 +1,4 @@
-requre("plugins.keymaps_and_options")
+require("plugins.keymaps_and_options")
 return {
 	{
 		"romgrk/barbar.nvim",

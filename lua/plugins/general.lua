@@ -118,6 +118,7 @@ return {
 	{
 		"justinmk/vim-sneak",
 		config = function()
+			vim.keymap.set({ "n", "v" }, "gz", "zz", { desc = "[Z] center cursor on screen", silent = true })
 			vim.keymap.set({ "n", "v", "o" }, "z", "<Plug>Sneak_s", { silent = true })
 			vim.keymap.set({ "n", "v", "o" }, "Z", "<Plug>Sneak_S", { silent = true })
 			vim.keymap.set({ "n", "v", "o" }, "f", "<Plug>Sneak_f", { silent = true })

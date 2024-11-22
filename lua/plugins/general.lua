@@ -112,7 +112,7 @@ return {
 	{
 		"easymotion/vim-easymotion",
 		config = function()
-			vim.keymap.set("n", "<leader>m", "<Plug>(easymotion-prefix)", { desc = "butt" })
+			vim.keymap.set("n", "<leader>m", "<Plug>(easymotion-prefix)", { desc = "easy[M]otion" })
 		end,
 	},
 	{

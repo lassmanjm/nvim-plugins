@@ -38,7 +38,7 @@ return {
 				live_filter = {
 					prefix = "[FILTER]: ",
 					always_show_folders = false, -- Turn into false from true by default
-				}
+				},
 			})
 
 			-- Key mapping for opening and closing file tree
@@ -49,7 +49,7 @@ return {
 	{
 		"Mofiqul/vscode.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
-		lazy=false,
+		lazy = false,
 		config = function()
 			vim.cmd.colorscheme("vscode")
 
@@ -58,7 +58,7 @@ return {
 	},
 	{
 		"echasnovski/mini.statusline",
-		version = '*',
+		version = "*",
 		config = function()
 			require("mini.statusline").setup({})
 		end,
@@ -81,24 +81,32 @@ return {
 	},
 	"mechatroner/rainbow_csv",
 	{
-	"christoomey/vim-tmux-navigator",
-	lazy = false,
-	cmd = {
-	  "TmuxNavigateLeft",
-	  "TmuxNavigateDown",
-	  "TmuxNavigateUp",
-	  "TmuxNavigateRight",
-	  "TmuxNavigatePrevious",
+		"christoomey/vim-tmux-navigator",
+		lazy = false,
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+		},
+		keys = {
+			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+		},
 	},
-	keys = {
-	  { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-	  { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-	  { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-	  { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-	  { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+	"tpope/vim-commentary",
+	"lewis6991/gitsigns.nvim",
+	{
+		"bkad/CamelCaseMotion",
+		config = function()
+			vim.keymap.set("n", "\\w", "<Plug>CamelCaseMotion_w", { desc = "Next [W]ord" })
+			vim.keymap.set("n", "\\b", "<Plug>CamelCaseMotion_b")
+			vim.keymap.set("n", "\\e", "<Plug>CamelCaseMotion_e")
+			vim.keymap.set("n", "\\ge", "<Plug>CamelCaseMotion_ge")
+		end,
 	},
-      },
-      "tpope/vim-commentary" ,
-      "lewis6991/gitsigns.nvim",
 }
-

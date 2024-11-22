@@ -103,10 +103,29 @@ return {
 	{
 		"bkad/CamelCaseMotion",
 		config = function()
-			vim.keymap.set("n", "\\w", "<Plug>CamelCaseMotion_w", { desc = "Next [W]ord" })
-			vim.keymap.set("n", "\\b", "<Plug>CamelCaseMotion_b")
-			vim.keymap.set("n", "\\e", "<Plug>CamelCaseMotion_e")
-			vim.keymap.set("n", "\\ge", "<Plug>CamelCaseMotion_ge")
+			vim.keymap.set("n", "\\w", "<Plug>CamelCaseMotion_w", { desc = "Start of next [W]ord" })
+			vim.keymap.set("n", "\\b", "<Plug>CamelCaseMotion_b", { desc = "[B]eggining of previous Word" })
+			vim.keymap.set("n", "\\e", "<Plug>CamelCaseMotion_e", { desc = "[E]nd of next word" })
+			vim.keymap.set("n", "\\ge", "<Plug>CamelCaseMotion_ge", { desc = "[E]nd of previous word" })
+		end,
+	},
+	{
+		"easymotion/vim-easymotion",
+		config = function()
+			vim.keymap.set("n", "<leader>m", "<Plug>(easymotion-prefix)", { desc = "butt" })
+		end,
+	},
+	{
+		"justinmk/vim-sneak",
+		config = function()
+			vim.keymap.set({ "n", "v", "o" }, "z", "<Plug>Sneak_s", { silent = true })
+			vim.keymap.set({ "n", "v", "o" }, "Z", "<Plug>Sneak_S", { silent = true })
+			vim.keymap.set({ "n", "v", "o" }, "f", "<Plug>Sneak_f", { silent = true })
+			vim.keymap.set({ "n", "v", "o" }, "F", "<Plug>Sneak_F", { silent = true })
+			vim.keymap.set({ "n", "v", "o" }, "t", "<Plug>Sneak_t", { silent = true })
+			vim.keymap.set({ "n", "v", "o" }, "T", "<Plug>Sneak_T", { silent = true })
+			vim.keymap.set({ "n", "v", "o" }, "s", "s", { silent = true })
+			vim.keymap.set({ "n", "v", "o" }, "S", "S", { silent = true })
 		end,
 	},
 }

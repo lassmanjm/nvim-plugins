@@ -1,4 +1,3 @@
-
 return {
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	{ -- Useful plugin to show you pending keybinds.
@@ -499,6 +498,18 @@ return {
 				--
 				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
+					["<Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							local entries = cmp.get_entries()
+							cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+
+							if #entries == 1 then
+								cmp.confirm()
+							end
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
 					-- Select the [n]ext item
 					["<C-n>"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item
@@ -589,5 +600,5 @@ return {
 			},
 			indent = { enable = true, disable = { "ruby" } },
 		},
-	}
+	},
 }

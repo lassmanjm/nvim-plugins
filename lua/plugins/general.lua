@@ -27,23 +27,14 @@ return {
 		end,
 	},
 	{
-		"nvim-tree/nvim-tree.lua",
+		"echasnovski/mini.files",
 		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
 		config = function()
-			require("nvim-tree").setup({
-				live_filter = {
-					prefix = "[FILTER]: ",
-					always_show_folders = false, -- Turn into false from true by default
-				},
-			})
+			local mini_files = require("mini.files")
+			mini_files.setup({})
 
-			-- Key mapping for opening and closing file tree
-			vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
-			vim.keymap.set("n", "<leader>tt", "<cmd>NvimTreeToggle<CR>", { desc = "[T]oggle Nvim [T]ree" })
+			-- Open file explorer with leader-e
+			vim.keymap.set("n", "<leader>e", mini_files.open)
 		end,
 	},
 	{

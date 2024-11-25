@@ -137,4 +137,19 @@ return {
 			vim.keymap.set({ "n", "v", "o" }, "S", "S", { silent = true })
 		end,
 	},
+	{
+		"echasnovski/mini.animate",
+		version = "*",
+		config = function()
+			local animate = require("mini.animate")
+			animate.setup({
+				cursor = {
+					timing = animate.gen_timing.linear({ duration = 100, unit = "total" }),
+				},
+				scroll = {
+					timing = animate.gen_timing.linear({ duration = 100, unit = "total" }),
+				},
+			})
+		end,
+	},
 }

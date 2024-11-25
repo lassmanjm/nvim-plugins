@@ -515,19 +515,7 @@ return {
 					-- If you prefer more traditional completion keymaps,
 					-- you can uncomment the following lines
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
-					-- ["<Tab>"] = cmp.mapping.select_next_item(),
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							local entries = cmp.get_entries()
-							cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-
-							if #entries == 1 then
-								cmp.confirm()
-							end
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
+					["<Tab>"] = cmp.mapping.select_next_item(),
 					["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
 					-- Manually trigger a completion from nvim-cmp.

@@ -102,7 +102,12 @@ return {
 		},
 	},
 	"tpope/vim-commentary",
-	"lewis6991/gitsigns.nvim",
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup({})
+		end,
+	},
 	{
 		"bkad/CamelCaseMotion",
 		config = function()

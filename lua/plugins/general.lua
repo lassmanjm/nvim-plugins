@@ -57,10 +57,13 @@ return {
 		end,
 	},
 	{
-		"echasnovski/mini.statusline",
-		version = "*",
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("mini.statusline").setup({})
+			local auto_theme = require("lualine.themes.auto")
+			auto_theme.normal.a.bg = "#0b93f4"
+			auto_theme.normal.b.fg = "#3ca8f6"
+			require("lualine").setup({ options = { theme = auto_theme } })
 		end,
 	},
 	{

@@ -498,18 +498,18 @@ return {
 				--
 				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							local entries = cmp.get_entries()
-							cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+					-- ["<Tab>"] = cmp.mapping(function(fallback)
+					-- 	if cmp.visible() then
+					-- 		local entries = cmp.get_entries()
+					-- 		cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 
-							if #entries == 1 then
-								cmp.confirm()
-							end
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
+					-- 		if #entries == 1 then
+					-- 			cmp.confirm()
+					-- 		end
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end, { "i", "s" }),
 					-- Select the [n]ext item
 					["<C-n>"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item
@@ -526,9 +526,9 @@ return {
 
 					-- If you prefer more traditional completion keymaps,
 					-- you can uncomment the following lines
-					--['<CR>'] = cmp.mapping.confirm { select = true },
-					--['<Tab>'] = cmp.mapping.select_next_item(),
-					--['<S-Tab>'] = cmp.mapping.select_prev_item(),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<Tab>"] = cmp.mapping.select_next_item(),
+					["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
 					-- Manually trigger a completion from nvim-cmp.
 					--  Generally you don't need this, because nvim-cmp will display

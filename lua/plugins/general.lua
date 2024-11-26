@@ -38,19 +38,21 @@ return {
 		end,
 	},
 	{
-		"Mofiqul/vscode.nvim",
+		"nvim-lualine/lualine.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		lazy = false,
-		config = function()
-			require("vscode").setup({})
-			vim.cmd.colorscheme("vscode")
+		dependencies = {
+		  "nvim-tree/nvim-web-devicons",
+		  {
+			  "Mofiqul/vscode.nvim",
+			  config = function()
+				  require("vscode").setup({})
+				  vim.cmd.colorscheme("vscode")
 
-			vim.cmd.hi("Comment gui=none")
-		end,
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+				  vim.cmd.hi("Comment gui=none")
+			  end,
+		  },
+	      },
 		config = function()
 			local auto_theme = require("lualine.themes.auto")
 			auto_theme.normal.a.bg = "#0b93f4"

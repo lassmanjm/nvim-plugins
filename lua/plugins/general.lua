@@ -35,6 +35,10 @@ return {
 
 			-- Open file explorer with leader-e
 			vim.keymap.set("n", "<leader>e", mini_files.open, { desc = "Open file [e]xplorer" })
+			-- Open file explorer at cwd with leader-E
+			vim.keymap.set("n", "<leader>E", function()
+				MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
+			end, { desc = "Open file [E]xplorer at cwd" })
 		end,
 	},
 	{
@@ -42,17 +46,17 @@ return {
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		lazy = false,
 		dependencies = {
-		  "nvim-tree/nvim-web-devicons",
-		  {
-			  "Mofiqul/vscode.nvim",
-			  config = function()
-				  require("vscode").setup({})
-				  vim.cmd.colorscheme("vscode")
+			"nvim-tree/nvim-web-devicons",
+			{
+				"Mofiqul/vscode.nvim",
+				config = function()
+					require("vscode").setup({})
+					vim.cmd.colorscheme("vscode")
 
-				  vim.cmd.hi("Comment gui=none")
-			  end,
-		  },
-	      },
+					vim.cmd.hi("Comment gui=none")
+				end,
+			},
+		},
 		config = function()
 			local auto_theme = require("lualine.themes.auto")
 			auto_theme.normal.a.bg = "#0b93f4"

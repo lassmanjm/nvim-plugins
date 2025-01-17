@@ -34,7 +34,7 @@ return {
 			mini_files.setup({})
 
 			-- Open file explorer with leader-e
-			vim.keymap.set("n", "<leader>e", mini_files.open)
+			vim.keymap.set("n", "<leader>e", mini_files.open, { desc = "Open file [e]xplorer" })
 		end,
 	},
 	{

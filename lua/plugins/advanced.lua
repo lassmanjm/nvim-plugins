@@ -370,10 +370,15 @@ return {
 				clangd = {},
 				pyright = {},
 				bashls = {},
-				tsserver = {},
-				html = {},
+				-- tsserver = {},
+				htmlls = {},
+				emmet_ls = {},
 				cssls = {},
+				dockerls = {},
 				jsonls = {},
+				marksman = {},
+				typos = {},
+				oxide = {},
 			}
 
 			-- Ensure the servers and tools above are installed

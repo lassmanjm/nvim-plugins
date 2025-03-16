@@ -371,7 +371,7 @@ return {
 				pyright = {},
 				bashls = {},
 				tsserver = {},
-				htmlls = {},
+				html = {},
 				emmet_ls = {},
 				cssls = {},
 				dockerls = {},

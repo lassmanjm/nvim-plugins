@@ -370,7 +370,6 @@ return {
 				clangd = {},
 				pyright = {},
 				bashls = {},
-				tsserver = {},
 				html = {},
 				emmet_ls = {},
 				cssls = {},

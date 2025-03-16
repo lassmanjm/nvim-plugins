@@ -367,6 +367,13 @@ return {
 						},
 					},
 				},
+				clangd = {},
+				pyright = {},
+				bashls = {},
+				tsserver = {},
+				html = {},
+				cssls = {},
+				jsonls = {},
 			}
 
 			-- Ensure the servers and tools above are installed

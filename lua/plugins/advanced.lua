@@ -378,7 +378,7 @@ return {
 				jsonls = {},
 				marksman = {},
 				typos = {},
-				oxide = {},
+				-- oxide = {},
 			}
 
 			-- Ensure the servers and tools above are installed

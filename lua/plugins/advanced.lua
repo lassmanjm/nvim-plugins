@@ -378,7 +378,7 @@ return {
 				jsonls = {},
 				marksman = {},
 				typos = {},
-				oxide = {},
+				markdown_oxide = {},
 			}
 
 			-- Ensure the servers and tools above are installed

@@ -189,6 +189,9 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+				border = "rounded",
+			})
 			-- Brief aside: **What is LSP?**
 			--
 			-- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -410,9 +413,6 @@ return {
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
-			})
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "rounded",
 			})
 		end,
 	},

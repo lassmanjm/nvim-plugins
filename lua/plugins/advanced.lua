@@ -190,7 +190,7 @@ return {
 		},
 		config = function()
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "shadow",
+				border = "rounded",
 			})
 			-- Brief aside: **What is LSP?**
 			--

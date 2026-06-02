@@ -121,6 +121,7 @@ return {
 			vim.keymap.set("n", "<leader>m", "<Plug>(easymotion-prefix)", { desc = "easy[M]otion" })
 		end,
 	},
+	"tpope/vim-repeat",
 	{
 		"justinmk/vim-sneak",
 		config = function()
